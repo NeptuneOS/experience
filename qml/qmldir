@@ -1,2 +1,4 @@
 AppItem 1.0 appItem.qml 
 TopApps 1.0 topApps.qml
+TopGames 1.0 topGames.qml
+PromoteItem 1.0 promoteItem.qml
