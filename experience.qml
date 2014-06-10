@@ -15,6 +15,10 @@ Rectangle {
         id: topGamesModel
     }
 
+    HighlightApps {
+        id: highlightAppsModel
+    }
+
     PromoteItem {
         id: promoteApp
         anchors.top: parent.top
@@ -27,6 +31,26 @@ Rectangle {
         img: "img/promoteApp1.png"
         img2: "img/promoteApp2.png"
         img3: "img/promoteApp3.png"
+    }
+
+    Row {
+        anchors.left: promoteApp.right
+        anchors.leftMargin: 5
+        anchors.top: parent.top
+        anchors.topMargin: 10
+        Repeater {
+            model: highlightAppsModel
+            HighlightItem {
+                appBg: bg
+                appTitle: name
+                appID: uri
+                appDesc: shortDesc
+                onClicked: {
+                    console.log("Open up " + appID)
+                    Qt.openUrlExternally(appID)
+                }
+            }
+        }
     }
 
     Rectangle {
